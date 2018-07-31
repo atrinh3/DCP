@@ -18,14 +18,15 @@ class CrazyString:
     def __init__(self, s="", s_set=[]):
         self.string = s
         self.string_set = s_set
+        
     
-    
+    # Iterate through each letter
+    # With each letter, compare with every word in the bank
+    # If there's a match, add to the output list and reset starting point
+    # Once you get to the end, if there are letters in the temporary word,
+    # then it means that there are leftover letters that didn't match.
     def v1(self):
-        # Iterate through each letter
-        # With each letter, compare with every word in the bank
-        # If there's a match, add to the output list and reset starting point
-        # Once you get to the end, if there are letters in the temporary word,
-        # then it means that there are leftover letters that didn't match.
+
         out = []
         start = 0
         for i in range(0, len(self.string)):
@@ -39,14 +40,14 @@ class CrazyString:
         return None
     
     
+    # Iterate through each letter.
+    # As you go through the letters, check the word bank.
+    # Remove words from the word bank as they don't become applicable
+    # Once a word is found, restore the word bank.
+    # If the word bank is ever empty, return null/None right away.
+    # Sacrifices a little bit of memory since have to make a copy of the
+    # word bank list.    
     def v2(self):
-        # Iterate through each letter.
-        # As you go through the letters, check the word bank.
-        # Remove words from the word bank as they don't become applicable
-        # Once a word is found, restore the word bank.
-        # If the word bank is ever empty, return null/None right away.
-        # Sacrifices a little bit of memory since have to make a copy of the
-        # word bank list.
         out = []
         start = 0
         bank = self.string_set.copy()
