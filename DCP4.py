@@ -24,8 +24,9 @@ class MissingInteger:
         start = 0
         while found:
             start += 1
-            for i in range(0, len(a)):
+            for i in range(0, len(self.array)):
                 if self.array[i] == start:
+                    found = True
                     break
                 else:
                     found = False
@@ -54,7 +55,4 @@ class MissingInteger:
 
     # Now trying to find a way to do it without using memory and saving a 
     # second array.
-    def first_missing_v3(a):
-    
-    
-    
+    # def first_missing_v3(a):
