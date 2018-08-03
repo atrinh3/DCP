@@ -1,4 +1,3 @@
-
 # Daily Coding Problem 4
 # 
 # Given an array of integers, find the first missing positive integer 
@@ -78,3 +77,5 @@ class MissingInteger:
             if out[i] >= 0:
                 return i + 1
         return len(out) + 1
+
+    
