@@ -1,3 +1,4 @@
+
 # Daily Coding Problem 4
 # 
 # Given an array of integers, find the first missing positive integer 
@@ -10,6 +11,7 @@
 #
 # You can modify the input array in-place.
 
+import math
 
 class MissingInteger:
     def __init__(self, param):
@@ -55,4 +57,24 @@ class MissingInteger:
 
     # Now trying to find a way to do it without using memory and saving a 
     # second array.
-    # def first_missing_v3(a):
+    # Step 1: Remove all elements of the array that are <= 0.
+    # Step 2: With the remaining array, iterate through the elements.  With 
+    #         element, change array[element] to be negative. May have to 
+    #         shift everything to the left to be able to use index 0.  At
+    #         the end, traverse through the final array and return the 
+    #         first index with a positive value.
+    def first_missing_v3(self):
+        def get_valid(a):
+            for element in a:
+                if element <= 0:
+                    a.remove(element)
+            return a
+        out = get_valid(self.array)
+        for i in range(0, len(out)):
+            if out[i] <= len(out):
+                value = abs(out[i])
+                out[value - 1] = abs(out[value - 1]) * -1
+        for i in range(0, len(out)):
+            if out[i] >= 0:
+                return i + 1
+        return len(out) + 1
