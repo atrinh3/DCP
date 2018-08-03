@@ -10,7 +10,6 @@
 #
 # You can modify the input array in-place.
 
-import math
 
 class MissingInteger:
     def __init__(self, param):
