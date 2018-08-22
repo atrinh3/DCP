@@ -44,6 +44,4 @@ class Stack:
         if len(self.stack) == 0:
             print("There is no stack to get the maximum value of.")
             return None
-        print(self.max_list)
-        print(self.max_list[len(self.max_list) - 1])
         return self.max_list[len(self.max_list) - 1]
