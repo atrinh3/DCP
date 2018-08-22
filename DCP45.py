@@ -13,7 +13,7 @@ def rand5():
     
     
 def rand7():
-    return (rand5() + rand5()) mod 7 + 1
+    return (rand5() + rand5()) % 7 + 1
     
     
     
