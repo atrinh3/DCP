@@ -24,9 +24,8 @@ def max_sum(a):
         if tmp < 0:
             cum_sum = 0
         else:
-            if tmp > cum_sum:
+            if tmp > holder:
                 holder = tmp
             cum_sum = tmp
-    return cum_sum
-    
-    
+    return max(holder, cum_sum)
+
